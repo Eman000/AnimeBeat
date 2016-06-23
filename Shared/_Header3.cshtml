@@ -1,0 +1,63 @@
+﻿@{ var session = HttpContext.Current.Session; }
+<head>
+    <meta charset="UTF-8">
+    <title>Anime Beat</title>
+    <link rel="stylesheet" href="/Content/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/Content/css/ie7.css" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <a href="~/Home/index" id="logo"><img src="/Content/images/logo1.png" alt="logo"></a>
+            <ul>
+                <li class="selected">
+                    <a href="~/Home/mainIndex">Home</a>
+                </li>
+                <li>
+                    <a href="~/Users/login">LogOut</a>
+                </li>
+
+                <li>
+                    <a href="~/Home/about">About</a>
+                </li>
+                <li>
+                    <a href="~/Home/collections">Collections</a>
+                    <ul>
+                        <li>
+                            <a href="~/Home/collections/#action">Action</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/collections/#horror">Horror</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/collections/#funny">Comedy</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/collections/mystery">Mystery</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/collections/sad">Sad</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="~/Home/store">Anime Store</a>
+                </li>
+                <li>
+                    <a href="~/Home/contact">Contact Us</a>
+                </li>
+                <li>
+                    <a href="~/Home/account">@session["User Name"]</a>
+                </li>
+            </ul>
+        </div>
+        <div class="featured">
+            <img src="/Content/images/bg-absolute.png" alt="">
+            <div>
+                <h3>Anime <br> Beat</h3>
+
+            </div>
+        </div>
+    </div>
+</body>
