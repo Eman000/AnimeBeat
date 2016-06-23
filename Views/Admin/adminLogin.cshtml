@@ -1,0 +1,67 @@
+﻿@model Anime.Models.admins
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body>
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/login.css">
+    <div class="body">
+        <center>
+            <div class="heading">
+                <h1> Admin Login</h1>
+            </div>
+        </center>
+        @using (Html.BeginForm("login", "Admin", FormMethod.Post))
+        { 
+            
+
+            <div class="name">
+                <h2>
+                    Name:
+                    @Html.TextBoxFor(model => model.name, new { @placeholder = "Name", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.name)
+                </h2>
+            </div>
+            <div class="Id">
+                <h2>
+                    ID:
+                    @Html.TextBoxFor(model => model.Id, new { @placeholder = "Id", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Id)
+                </h2>
+            </div>
+            <br>
+
+            <div class="pw">
+                <h2>
+                    Password:
+                    @Html.TextBoxFor(model => model.password, new { type = "password", @placeholder = "Password", @class = "form-control", @required = "required", @pattern = ".{6,}" })
+                    @Html.ValidationMessageFor(model => model.password)
+                </h2>
+            </div>
+            <br>
+
+            <div class="email">
+                <h2>
+                    Email:
+                    @Html.TextBoxFor(model => model.email, new { @placeholder = "Email", @class = "form-control", @required = "required", @pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$" })
+                    @Html.ValidationMessageFor(model => model.email)
+                </h2>
+            </div>
+            <br><br>
+
+            <center><input type="submit" value="Submit"></center>
+        }
+
+    </div>
+    <style>
+        body {
+            background-image: URL("/Content/images/im2.jpg");
+        }
+    </style>
+
+</body>
+</html>

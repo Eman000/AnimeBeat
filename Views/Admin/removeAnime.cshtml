@@ -1,0 +1,48 @@
+﻿@model Anime.Models.store
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/login.css">
+    <div class="body">
+        <center>
+            <div class="heading">
+                <h1> Remove Anime</h1>
+            </div>
+            <br>
+        </center>
+        @using (Html.BeginForm("remove", "Admin", FormMethod.Post))
+        {
+
+            <div class=" para"><center><p>Enter the Code of the Anime in text that you want to remove</p></center></div>
+            <br><br><br>
+            <div class="Id">
+                <h3>
+                    Code
+                    @Html.TextBoxFor(model => model.code, new { @placeholder = "Enter Code", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.code)
+                </h3>
+            </div>
+
+
+          <br><br>
+
+            <center><input type="submit" value="Submit"></center>
+        }
+
+    </div>
+    <style>
+        body {
+            background-image: URL("/Content/images/im2.jpg");
+        }
+    </style>
+
+</body>
+</html>
+
+

@@ -1,0 +1,33 @@
+﻿@model  List<Anime.Models.store>
+
+@{
+    Layout = null;
+}
+@RenderPage("~/Shared/_Header2.cshtml")
+<div class="body">
+    <div class="about">
+              
+        <img src="/Content/images/figure41.jpg" height="350" width=" 1000" alt="">
+        <h2>My Anime Beat list </h2>
+        @{
+            foreach(var x in Model)
+            {
+                <ul>
+                    <li>
+                        <a href=""><img src="/Content/images/@x.image" height="300" width=" 240" alt=""></a>
+
+
+                        <h3>@x.name</h3>
+                        <p> @x.discription</p>
+                    </li>
+
+
+                </ul>
+            }
+        }
+        
+ 
+    </div>
+</div>
+@RenderPage("~/Shared/_Footer.cshtml")
+

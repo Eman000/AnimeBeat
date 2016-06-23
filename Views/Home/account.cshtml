@@ -1,0 +1,99 @@
+﻿
+
+@{
+    Layout = null;
+}
+@RenderPage("~/Shared/_Header2.cshtml")
+
+@{ var session = HttpContext.Current.Session; }
+
+
+<img src="@session["ImagePath"]" height="200" width="200">
+<p><center><b>@session["User Name"]</b></center></p>
+<p><center><b> @session["First Name"] @session["Last Name"]</b></center></p>
+
+
+    <div class="body">
+    <div class="blog">
+      
+        <div>
+            <div>
+                <div>
+                    <span>May 20, 2016</span>
+                    <h3><a href="#">New Anime Collection</a></h3>
+                    <a href="#">0 Comments</a> <a href="#">Share This</a> <a href="#">Tweet This</a> <span>Tags: <a href="#">Collection</a></span>
+                </div>
+                <div>
+                   
+                    <p>
+                        The website is made for you so that you can easily watch news about latest anime series and can make
+                        yor own anime list.
+                    </p>
+                </div>
+            </div>
+
+     
+        </div>
+
+        <div>
+
+
+            <div>
+                <h3><a href="#">Favourites</a></h3>
+                <ul>
+                    
+
+                    @{
+                        int no = Convert.ToInt32(Session["TotalItem"]);
+                        foreach(var x in ViewBag.Name)
+                        {
+                            
+                            <li>
+                            <a href="#">@x.name</a>
+                            </li>
+                        }
+                    }
+                                             
+   
+                </ul>
+            </div>
+
+
+            <div>
+                
+                <h3><a href="~/Home/Mylist">My Anime List</a></h3>
+               
+            </div>
+
+
+            <div>
+                <h3>Categories</h3>
+                <ul>
+                    <li>
+                        <a href="#">Action</a>
+                    </li>
+                    <li>
+                        <a href="#">Comedy</a>
+                    </li>
+                    <li>
+                        <a href="#">Sad</a>
+                    </li>
+                    <li>
+                        <a href="#">Mystery</a>
+                    </li>
+                    <li>
+                        <a href="#">Horror</a>
+                    </li>
+                    <li>
+                        <a href="#">Romantic</a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</div>              
+
+@RenderPage("~/Shared/_Footer.cshtml")

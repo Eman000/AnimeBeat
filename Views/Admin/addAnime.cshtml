@@ -1,0 +1,79 @@
+﻿@model Anime.Models.store
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/login.css">
+    <div class="body">
+        <center>
+            <div class="heading">
+                <h1> Add Anime</h1>
+            </div>
+        </center>
+        @using (Html.BeginForm("add", "Admin", FormMethod.Post))
+        {
+
+
+            <div class="name">
+                <h3>
+                    Name
+                    @Html.TextBoxFor(model => model.name, new { @placeholder = "Name", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.name)
+                </h3>
+            </div>
+            
+            <div class="Id">
+                <h3>
+                    Code
+                    @Html.TextBoxFor(model => model.code, new { @placeholder = "Code", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.code)
+                </h3>
+            </div>
+            
+
+            <div class="pw">
+                <h3>
+                    Category
+                    @Html.TextBoxFor(model => model.category, new { @placeholder = "Category", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.category)
+                </h3>
+            </div>
+            <br>
+
+            <div class="desc">
+                <h3>
+                    Description
+                    @Html.TextBoxFor(model => model.discription, new { @placeholder = "Description", @class = "form-control", @required = "required"})
+                    @Html.ValidationMessageFor(model => model.discription)
+                </h3>
+            </div>
+            <br>
+            <div class="email">
+                <h3>
+                    
+                    @Html.Label("Anime Image")
+                    @Html.TextBoxFor(m => m.image, new { @placeholder = "Anime Image", type = "file" })
+                    @Html.ValidationMessageFor(model => model.image)
+                </h3>
+            </div>
+            <br>
+
+            <center><input type="submit" value="Submit"></center>
+        }
+
+    </div>
+    <style>
+        body {
+            background-image: URL("/Content/images/im2.jpg");
+        }
+    </style>
+
+</body>
+</html>
+
+

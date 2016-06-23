@@ -1,0 +1,28 @@
+
+.body{
+	border:2px solid black;
+	height:300px;
+	width:700px;	
+	margin-left:300px;
+	
+	
+}
+
+.pic{
+	
+	float:left;
+	margin:40px;
+	
+
+}
+.name{
+   color: gray;
+   margin-left: 5px;
+   
+}
+.job
+{color:orange}
+.num
+{color:orange}
+.email
+{color:orange}

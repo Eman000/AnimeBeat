@@ -1,0 +1,64 @@
+﻿@model Anime.Models.about
+
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Add News</title>
+</head>
+<body>
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/login.css">
+    <div class="body">
+        <center>
+            <div class="heading">
+                <h1> Add News in About Page</h1>
+            </div>
+        </center>
+        @using (Html.BeginForm("addnews", "Admin", FormMethod.Post))
+        {
+            <div class="name">
+                <h3>
+                    ID
+                    @Html.TextBoxFor(model => model.Id, new { @placeholder = "Id", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Id)
+                </h3>
+            </div>
+
+            <div class="Id">
+                <h3>
+                    Heading
+                    @Html.TextBoxFor(model => model.heading, new { @placeholder = "Heading", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.heading)
+                </h3>
+            </div>
+
+
+            <div class="pw">
+                <h3>
+                    News
+                    @Html.TextBoxFor(model => model.news, new { @placeholder = "News", @class = "form-control", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.news)
+                </h3>
+            </div>
+            <br>
+
+            <br>
+
+            <center><input type="submit" value="Submit"></center>
+        }
+
+    </div>
+    <style>
+        body {
+            background-image: URL("/Content/images/im2.jpg");
+        }
+    </style>
+
+</body>
+</html>
+
+
+
+
