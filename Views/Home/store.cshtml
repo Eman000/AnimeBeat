@@ -1,0 +1,81 @@
+﻿@model  List <Anime.Models.store>
+
+@{
+    Layout = null;
+}
+
+@RenderPage("~/Shared/_Header2.cshtml")
+
+<link rel="stylesheet" type="text/css" href="/Content/css/mybutton.css">
+
+	<div class="body">
+        <div class="blog">
+         <div>
+
+            @foreach(var item in Model)
+            {
+            <a name="@item.code"></a>
+          <div>
+            <div>
+                <h3><a href="#">Anime Collection</a></h3>
+                <a href="~/Home/collections">Back</a>
+                <br>
+                <h2>Add to List</h2>
+                <br>
+
+                <a href="~/Home/MyList?code=@item.code" class="myButton"> @item.name</a>
+                
+                <br>
+                <a href="#" class="myButton">   Download</a>
+            </div>
+            <div>
+                <h3>@item.name</h3>
+                <img src="/Content/images/@item.image" height="300" width="500" alt="">
+
+                <p>
+                    @item.discription
+                </p>
+            </div>
+
+           </div>
+             }
+
+       
+
+
+
+            <div id="DynamicLoading"></div>
+
+            </div>
+
+
+            <div>
+
+                <div>
+                    <h3>Categories</h3>
+                    <ul>
+                        <li>
+                            <a href="#action">Action</a>
+                        </li>
+                        <li>
+                            <a href="#funny">Funny</a>
+                        </li>
+                        <li>
+                            <a href="#horror">Horror</a>
+                        </li>
+                        <li>
+                            <a href="#mystery">Mystery</a>
+                        </li>
+                        <li>
+                            <a href="#sad">Sad</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+             </div>
+          </div>
+
+          
+
+@RenderPage("~/Shared/_Footer.cshtml")

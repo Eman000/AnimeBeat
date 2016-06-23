@@ -1,0 +1,51 @@
+﻿@model  List<Anime.Models.about>
+
+@{
+    Layout = null;
+}
+@RenderPage("~/Shared/_Header2.cshtml")
+
+     <div class="body">
+    <div class="about">
+        <img src="/Content/images/figure6.jpg" height="350" width=" 1000" alt="">
+        <h2>About Anime Beat </h2>
+        <ul>
+            <li>
+                <a href=""><img src="/Content/images/figure7.jpg" height="300" width=" 240" alt=""></a>
+
+
+                     <h3></h3>
+                     <p> </p>
+
+                 
+
+                
+            </li>
+            <li>
+                <a href=""><img src="/Content/images/figure8.jpg" height="300" width=" 240" alt=""></a>
+                <h3>You can watch videos</h3>
+                <p>
+                    You can watch anime videos trailers if you want and then decide which anime you want to see.
+                </p>
+            </li>
+            <li>
+                <a href=""><img src="/Content/images/figure9.jpg" height="300" width=" 240" alt=""></a>
+                <h3>Be Part of Our Community</h3>
+                <p>
+                    You can sign up to our site and feel free to chat with us through e-mail. You can login to our site and can see your favourite anime list.
+                </p>
+            </li>
+            <li>
+                <a href=""><img src="/Content/images/figure10.jpg" height="300" width=" 240" alt=""></a>
+            </li>
+        </ul>
+        @foreach (var item in Model)
+        {
+            <h3>@item.heading</h3>
+            <p> @item.news</p>
+
+        }
+    </div>
+</div>
+
+@RenderPage("~/Shared/_Footer.cshtml")

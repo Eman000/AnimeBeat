@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+@RenderPage("~/Shared/_Header2.cshtml")
+
+<link rel="stylesheet" type="text/css" href="/Content/css/login.css">
+<body>
+     <div class="body1">
+	<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+    <div class="row1">
+        <label for="name">Your Name:</label><br />
+        <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+    </div>
+    <div class="row2">
+        <label for="email">Your Email:</label><br />
+        <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+    </div>
+    <div class="row3">
+        <label for="message">Your Message:</label><br />
+        <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+    </div>
+    <center><input id="submit_button" type="submit" value="Send email" /></center>
+    </form>		
+    </div>
+
+
+
+</body>
+<br> <br> <br> <br> <br>
+
+@RenderPage("~/Shared/_Footer.cshtml")
